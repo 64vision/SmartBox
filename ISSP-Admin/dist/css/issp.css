@@ -1,0 +1,63 @@
+.viewpanel {
+
+	display: none;
+	min-height:  300px;
+
+}
+.templatePreview {
+	max-width: 99%;
+
+}
+.cma_item, .campaign_item, .sca_item, .schedule_item, .wsa_item, .widget_item {
+	width: 30%;
+	float: left;
+	margin: 1.3%;
+	text-align: center;
+	cursor: pointer;
+}
+.newgroupblock {
+	padding: 12px 20px;
+	background: #ddd;
+	display: none;
+}
+.status-1 {
+	color: #999;
+}
+.status-2 {
+	color: #222;
+}
+.status-3 {
+	color: #3C8DBC;
+}
+.status-4 {
+	color: #00A65A;
+}
+.logo-lg small {
+	font-size:  .6em;
+	margin-left: 5px;
+}
+.SelectCampaignBox, .SelectScheduleBox {
+
+	display: none;
+}
+.template-item {
+	text-align: center;
+	width: 48%;
+	float:  left;
+	margin: .5%;
+	padding: 4px;
+	cursor: pointer;
+}
+.template-item:hover {
+	background: #2F6FCB;
+	color: #fff;
+}
+/*Register css*/
+.regform {
+	display: none;
+	transition: all 0.5s ease;
+}
+#SignUpBtn  {
+	display: none;
+}
+
