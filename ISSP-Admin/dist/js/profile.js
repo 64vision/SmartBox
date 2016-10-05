@@ -1,5 +1,8 @@
 var User;
 $(function () {
+	if(!sessionStorage.Auth) {
+			window.location.assign("index.html");
+	}
 	$('.callout-danger').hide();
 	 User = ISSP.auth.userdata[0];
 	//console.log(user);
@@ -9,6 +12,15 @@ $(function () {
 	}
 	profile();
 	status();
+
+	$(".signoutbtn").on("click", function() {
+			var r = confirm("Are you sure you want to sign out?");
+				if (r == true) {
+					delete sessionStorage.Auth;
+				  	window.location.assign("index.html")
+				}
+
+		});
 
 });
 

@@ -143,9 +143,10 @@ var Report = {
 		_params.token = obj.token;
 		_params.user_id = obj.userdata[0].user_id;
 		_params.media_id = media_id;
-		
+		$("._view_number").html("");
 		$.post(ISSP.server + 'media/getviews', _params, function(res) {
 			var resobj = JSON.parse(res);
+			console.log(resobj);
 			if(resobj.status == 1) {
 				$("._view_number").html(resobj.items[0].views);
 			}
@@ -174,6 +175,115 @@ var Report = {
 					};
 
 					setTimeout(function() {Report.GenerateChart("#areaChart", labels, datas);}, 300);
+				}
+
+			});
+	},
+//var md = new MobileDetect(
+	GetAdsStats:function(media_id, viewby) {
+
+			var obj = ISSP.auth;
+			var _params = {};
+			_params.token = obj.token;
+			_params.user_id = obj.userdata[0].user_id;
+			_params.media_id = media_id;
+			_params.viewby =viewby;
+			var total_views = 0;
+			$.post(ISSP.server + 'media/getads_stats', _params, function(res) {
+				
+				var resobj = JSON.parse(res);
+				console.log(resobj);
+				if(resobj.status == 1) {
+					var labels = [];
+					var datas = []
+					for (var i = 0; i < resobj.items.length; i++) {
+							labels.push(moment(resobj.items[i].log).format('L'));
+							datas.push(resobj.items[i].views);
+							total_views = total_views + resobj.items[i].views;
+							console.log(resobj.items[i].views);
+					};
+
+					$("._view_number").html(total_views);
+
+					setTimeout(function() {Report.GenerateChart("#areaChart", labels, datas);}, 300);
+				}
+
+			});
+	},
+
+
+	GetPlatform:function(media_id) {
+
+			var obj = ISSP.auth;
+			var _params = {};
+			_params.token = obj.token;
+			_params.user_id = obj.userdata[0].user_id;
+			_params.media_id = media_id;
+			//_params.viewby =viewby;
+			var html;
+			var total_views = 0;
+			var others = 0;
+			var iOS  = 0;
+			var android  = 0;
+			$.post(ISSP.server + 'media/getads_platform', _params, function(res) {
+				
+				var resobj = JSON.parse(res);
+				$("#os_stats").html("");
+				console.log(resobj);
+				if(resobj.status == 1) {
+					var labels = [];
+					var datas = []
+					for (var i = 0; i < resobj.items.length; i++) {
+						var md = new MobileDetect(resobj.items[i].agent);
+						var osname;
+						osname = md.mobile();
+						console.log(osname);
+						if(md.is('iPhone')) {
+							iOS = iOS + resobj.items[i].views;
+						}
+						if(osname != "iPhone" && osname != "UnknownTablet") {
+							android=android + resobj.items[i].views;;
+						} 
+						if(osname == "null" || osname == "UnknownTablet") {
+							others=others + resobj.items[i].views;;
+						} 
+
+					};
+
+					var total = others + android + iOS;
+					var iosPer = (iOS/total) * 100;
+					var andPer = (android/total) * 100;
+					var othersPer = (others/total) * 100;
+					
+					html = '<div class="progress-group">';
+					html = html +  '<span class="progress-text">iOS</span>';
+					html = html +  '<span class="progress-number"><b>'+iOS+'</b></span>';
+					html = html +  '<div class="progress sm">';
+					html = html +  '<div class="progress-bar progress-bar-aqua" style="width: '+iosPer.toFixed(2)+'%"></div>';
+					html = html +  '</div>';
+					html = html +  '</div>';
+					$("#os_stats").append(html);
+
+					html = '<div class="progress-group">';
+					html = html +  '<span class="progress-text">Android</span>';
+					html = html +  '<span class="progress-number"><b>'+android+'</b></span>';
+					html = html +  '<div class="progress sm">';
+					html = html +  '<div class="progress-bar progress-bar-green" style="width: '+andPer.toFixed(2)+'%"></div>';
+					html = html +  '</div>';
+					html = html +  '</div>';
+					$("#os_stats").append(html);
+
+
+					html = '<div class="progress-group">';
+							html = html +  '<span class="progress-text">Others</span>';
+							html = html +  '<span class="progress-number"><b>'+others+'</b></span>';
+							html = html +  '<div class="progress sm">';
+							html = html +  '<div class="progress-bar progress-bar-red" style="width: '+othersPer.toFixed(2)+'%"></div>';
+							html = html +  '</div>';
+							html = html +  '</div>';
+							$("#os_stats").append(html);
+
+					
 				}
 
 			});

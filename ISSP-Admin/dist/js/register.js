@@ -8,7 +8,7 @@
               _params.username = $('#username').val();
               _params.password= $('#password').val();
               var $btn = $('.btn').button('loading');
-              $.post('http://localhost:8081/user/login', _params, function(res) {
+              $.post('http://prod.inventiv.ph/user/login', _params, function(res) {
                 var  obj = JSON.parse(res);
                 console.log(obj);
                 if(obj.status ==1) {
@@ -77,7 +77,7 @@
               _params.address= $('#address').val();
               _params.contact_number= $('#contact').val();
             _params.status = 101;
-                $.post('http://localhost:8081/user/validate', _params, function(res) {
+                $.post('http://prod.inventiv.ph/user/validate', _params, function(res) {
                        var  obj = JSON.parse(res);
                       console.log(obj);
                      if(obj.status ==101) {
@@ -85,11 +85,11 @@
                             $('.errorMessage').html('User already exist!');
                         
                       } else if(obj.status ==102){
-                             $.post('http://localhost:8081/user/create', _params, function(res) {
+                             $.post('http://prod.inventiv.ph/user/create', _params, function(res) {
                                   var  obj = JSON.parse(res);
                                    if(obj.status == 1) {
                                       alert('Account created!');
-                                       $.post('http://localhost:8081/user/login', _params, function(res) {
+                                       $.post('http://prod.inventiv.ph/user/login', _params, function(res) {
                                          var  obj = JSON.parse(res);
                                          if(obj.status == 1) {
                                             sessionStorage.Auth = res;

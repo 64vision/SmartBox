@@ -85,10 +85,13 @@ $(function () {
 
     });
     $(".signoutbtn").on("click", function() {
-    	sessionStorage.clear();
-    	 window.location.assign("issp.html");
-    	return false;
-    });
+			var r = confirm("Are you sure you want to sign out?");
+				if (r == true) {
+					delete sessionStorage.Auth;
+				  	window.location.assign("index.html")
+				}
+
+		});
 
     //Timepicker
     $(".timepicker").timepicker({

@@ -38,7 +38,9 @@ $(function () {
 			$('.crawler').show();
 		} else if(val == "popup") {
 			$('.popment').show();
-		} 
+		}  else if(val == "inline") {
+			$('.web').show();
+		}
 	});
 	$("#newWidgetForm").on('submit', function() {
 		var type = $('#widgetType').val();
@@ -49,6 +51,8 @@ $(function () {
 			file = $("#crawlertext").val();
 		} else if(type == "popup") {
 			file = $("#announcement").val();
+		} else if(type == "inline") {
+			file = $("#website").val();
 		} 
 		var _media ={};
 		_media.name = $('#widgetlabel').val();

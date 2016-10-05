@@ -1,5 +1,5 @@
 var ISSP = {
-	server: 'http://localhost:8081/',
+	server: 'http://prod.inventiv.ph/',
 	auth: JSON.parse(sessionStorage.Auth),
 	getScreens: function() {
 		var obj = this.auth;

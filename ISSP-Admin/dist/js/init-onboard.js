@@ -140,6 +140,14 @@ $("body").on('click', '.removeBtn', function() {
 			$('.addBth').show();
 		});
 
+		$(".signoutbtn").on("click", function() {
+			var r = confirm("Are you sure you want to sign out?");
+				if (r == true) {
+					delete sessionStorage.Auth;
+				  	window.location.assign("../")
+				}
+
+		});
 
 });
 

@@ -9,8 +9,8 @@
         AWS.config.region = 'ap-southeast-1';
 		
 		AWS.config.update({
-			accessKeyId: "AKIAJIH3VLSVHHKH6XWQ",
-			secretAccessKey: "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",
+			accessKeyId: "AKIAJF6QRMUOIOJ4IFFQ",
+secretAccessKey: "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",
 				"region": "ap-southeast-1"  
 			});
 	   var elastictranscoder = new AWS.ElasticTranscoder({apiVersion: '2012-09-25'});

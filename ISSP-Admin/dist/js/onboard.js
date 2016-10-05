@@ -1,5 +1,5 @@
 var ONBOARD = {
-	server: 'http://localhost:8081/',
+	server: 'http://prod.inventiv.ph/',
 	auth: JSON.parse(sessionStorage.Auth),
 	getSites: function () {
 		var obj = this.auth;

@@ -122,9 +122,11 @@
           <ul class="sidebar-menu">
             <li class="header"></li>
             <!-- Optionally, you can add icons to the links -->
-            <li><a href="#Main" class="_slide"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+         
            
-            <li><a href="#Media"  class="_slide"><i class="fa fa-file-image-o"></i> <span>Ads Management</span></a></li>
+            <li><a href="ads.html"  class="_slide_"><i class="fa fa-file-image-o"></i> <span>Ads Management</span></a></li>
+
+               <li><a href="onboard/index.html" class="_slide_"><i class="fa fa-dashboard"></i> <span>Onboard</span></a></li>
 
           </ul><!-- /.sidebar-menu -->
         </section>
@@ -148,298 +150,8 @@
 
         <!-- Main content -->
         <section class="content">
-          <div class="viewpanel active-view" id="Main" data-title="Dashboard">
+          <div class="viewpanel active-view" id="Main" data-title="Ads Management">
 
-                  <!-- Small boxes (Stat box) -->
-          <div class="row">
-            <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-aqua">
-                <div class="inner">
-                  <h3 class="sumscreen">0</h3>
-                  <p>Screens</p>
-                </div>
-                <div class="icon">
-                  <i class="fa fa-desktop"></i>
-                </div>
-              
-              </div>
-            </div><!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-green">
-                <div class="inner">
-                  <h3 class="sumcampaign">0</h3>
-                  <p>Campaigns</p>
-                </div>
-                <div class="icon">
-                  <i class="fa fa-flag"></i>
-                </div>
-              
-              </div>
-            </div><!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-yellow">
-                <div class="inner">
-                  <h3 class="summedia">0</h3>
-                  <p>Media Assets</p>
-                </div>
-                <div class="icon">
-                  <i class="fa fa-picture-o"></i>
-                </div>
-              
-              </div>
-            </div><!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-red">
-                <div class="inner">
-                  <h3>0</h3>
-                  <p>Today's views</p>
-                </div>
-                <div class="icon">
-                  <i class="fa fa-eye"></i>
-                </div>
-              </div>
-            </div><!-- ./col -->
-
-          </div><!-- /.row -->
-
-
-
-            <div class="row">
-
-
-             
-
-
-                <div class="col-md-8">
-                  <!-- AREA CHART -->
-                  <div class="box box-primary">
-                    <div class="box-header with-border">
-                      <h3 class="box-title">View's Chart</h3>
-                    </div>
-                    <div class="box-body">
-                      <div class="chart">
-                        <canvas id="summaryChart" style="height:250px; width: 300px;"></canvas>
-                       
-                      </div>
-                    </div><!-- /.box-body -->
-                  </div><!-- /.box -->
-                </div><!-- /.col (LEFT) -->
-
-
-                  <div class="col-md-4">
-
-          
-           
-                  <!-- LINE CHART -->
-                  <div class="box box-info">
-                    <div class="box-header with-border">
-                      <h3 class="box-title">ISSP Information and Updates</h3>
-                    </div>
-                    <div class="box-body">
-                         <ul class="products-list product-list-in-box">
-
-                            <li class="item">
-                              <div class="product-img">
-                                <img src="dist/img/default-50x50.gif" alt="Product Image">
-                              </div>
-                              <div class="product-info">
-                                <a href="javascript::;" class="product-title"> Welcome Inventiv Smart Screens Platform </a>
-                                <span class="product-description">
-                                    You screen is not just a screen.
-                                </span>
-                              </div>
-                            </li><!-- /.item -->
-                            <li class="item">
-                              <div class="product-img">
-                                <img src="dist/img/default-50x50.gif" alt="Product Image">
-                              </div>
-                              <div class="product-info">
-                                <a href="javascript::;" class="product-title"> ISSP Tips </a>
-                                <span class="product-description">
-                                    Heres some tips.
-                                </span>
-                              </div>
-                            </li><!-- /.item -->
-
-                            </li><!-- /.item -->
-
-                      </ul>
-                    </div><!-- /.box-body -->
-                  </div><!-- /.box -->
-                </div><!-- /.col (RIGHT) -->
-               
-
-              </div><!-- /.row -->
-
-          </div> <!--Main-->
-          <div class="viewpanel" id="Companies" data-title="Companies">
-              <div class="row">
-                  <div class='col-md-12'>
-                        <div class="box">
-                          <div class="box-header">
-                            <h3 class="box-title">List</h3>
-
-                          </div><!-- /.box-header -->
-                          <div class="box-body no-padding">
-                            <table class="table table-striped" >
-                              <tr>
-                                <th>Name</th>
-                                <th style="width: 80px"></th>
-                              </tr>
-                              <tbody id='companytable'>
-
-                             </tbody>
-                            </table>
-                          </div><!-- /.box-body -->
-                        </div><!-- /.box -->
-                  </div>
-              </div>
-          </div><!--panel end -->
-
-           <div class="viewpanel" id="Screen" data-title="Screens">
-               <div class="row">
-                  <div class='col-md-12'>
-                        <div class="box">
-                          <div class="box-header">
-                                <select class="form-control select2 pull-left"  id="viewscreengroup" style="width: 200px;">
-                                  <option value="0">---All Groups--</option>
-                                </select>
-                                <button class="btn btn-sm btn-success pull-right" data-toggle="modal" data-target="#IsspModal8" ><i class="fa fa-plus"></i> Request a new screen</button>
-                          </div><!-- /.box-header -->
-                          <div class="box-body no-padding">
-                            <table class="table table-striped" >
-                              <tr>
-                                 <th style="width: 40px"></th>
-                                <th>Name</th>
-                                <th style="width: 80px"></th>
-                              </tr>
-                              <tbody id='screentable'>
-
-                             </tbody>
-                            </table>
-                          </div><!-- /.box-body -->
-                        </div><!-- /.box -->
-                  </div>
-              </div>
-          </div> <!--panel end-->
-
-          <div class="viewpanel" id="singlescreen" data-title="Singlescreen">
-              <div class="row">
-                  <!--<div class='col-md-5'>
-                      <div class="box-body">
-                           <img class="templatePreview" style="max-width: 100%;" src="images/noEffects.png"/>
-                      </div>
-                  </div>-->
-                  <div class='col-md-5'>
-                        <!-- Widgets List -->
-                       <div class="box box-primary">
-                          <div class="box-header">
-                            <h3 class="box-title"><i class="fa fa-th"></i> Zones</h3>
-                          </div><!-- /.box-header -->
-                          <div class="box-body no-padding">
-                            <table class="table table-striped" >
-                              <tr>
-        
-                                <th>Name</th>
-                                <th>Campaign</th>
-                                
-                              </tr>
-                              <tbody id='widgettable'>
-
-                             </tbody>
-                            </table>
-                          </div><!-- /.box-body -->
-                        </div><!-- /.box -->
-                  </div>
-                   <div class='col-md-7'>
-                      
-                           <!-- Widgets List -->
-                       <div class="box box-primary">
-                          <div class="box-header">
-                            <h3 class="box-title"> <i class="fa fa-desktop"></i> Details </h3>
-                          </div><!-- /.box-header -->
-                          <div class="box-body padding">
-                             <div id="screendetails"> 
-                               <p class="screendetails"></p>
-                              <br />
-                               <p>Template: <span class="templatename" >Default</span></p>
-                                 <p>Description: <span class="templatedescription" >----</span></p>
-                             </div>
-                          </div><!-- /.box-body -->
-
-                            <div class="box-footer clearfix no-border text-right">
-                             <!-- <button class="btn btn-info pull-left" data-toggle="modal" data-target="#IsspModal9"><i class="fa fa-th"></i> More Templates</button> -->
-
-                             <button class="btn btn-warning" id="ResetScreenBtn"><i class="fa fa-refresh"></i> Refresh</button>
-                          </div>
-
-
-                        </div><!-- /.box -->
-
-                  </div>
-               </div>   
-
-                <div class="row">
-                  
-
-                  <!--
-                    <div class='col-md-6'>
-                        <div class="box">
-                          <div class="box-header">
-                            <h3 class="box-title widgetName">Select Widget</h3>
-                          </div>
-                          <div class="box-body">
-                            <div id="widget_items"> </div>
-                          </div>
-                           <div class="box-footer clearfix no-border">
-                            <small class="pull-left">Click item to remove.</small>
-                            <button class="btn btn-default pull-right btn-sm" data-toggle="modal" data-target="#IsspModal7"><i class="fa fa-plus"></i> Add Schedule</button>
-                          </div>
-                        </div> 
-                  </div>
-                  -->
-
-               </div>    
-          </div> <!--panel end-->
-           <div class="viewpanel" id="campaignpanel" data-title="Manage Campaigns">
-             <!-- Manage Campaign-->
-             <div class="row">
-                  <div class='col-md-12'>
-                        <div class="box">
-                          <div class="box-header">
-                            <h3 class="box-title">Campaigns</h3>
-                             <button class="btn btn-default pull-right btn-sm" data-toggle="modal" data-target="#IsspModal"><i class="fa fa-plus"></i> Create</button>
-                          </div><!-- /.box-header -->
-                          <div class="box-body no-padding">
-                            <table class="table table-striped" >
-                              <tr>
-                                <th>Name</th>
-                                <!--<th>Media Interval</th>
-                               <th style="width: 80px"></th>-->
-                              </tr>
-                              <tbody id='campaigntable'>
-
-                             </tbody>
-                            </table>
-                          </div><!-- /.box-body -->
-                           <div class="box-footer clearfix no-border">
-                           
-                       </div>
-                        </div><!-- /.box -->
-                  </div>
-
-                   
-
-              </div> <!--/manage campaign-->
-
-
-          </div><!--panel end-->
-
-           <div class="viewpanel" id="Media" data-title="Ads Management">
                 <div class="row">
                   <div class='col-md-12'>
                         <!-- Widgets List -->
@@ -474,47 +186,7 @@
 
            <div class="viewpanel" id="SingleMedia" data-title="SingleMedia">
 
-                <div class="row">
-                  <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box">
-                      <span class="info-box-icon bg-aqua"><i class="fa fa-desktop"></i></span>
-                      <div class="info-box-content">
-                        <span class="info-box-text">Screens</span>
-                        <span class="info-box-number _screen_number">--</span>
-                      </div><!-- /.info-box-content -->
-                    </div><!-- /.info-box -->
-                  </div><!-- /.col -->
-                  <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box">
-                      <span class="info-box-icon bg-green"><i class="fa fa-flag-o"></i></span>
-                      <div class="info-box-content">
-                        <span class="info-box-text">Campaigns</span>
-                        <span class="info-box-number _campaign_number">--</span>
-                      </div><!-- /.info-box-content -->
-                    </div><!-- /.info-box -->
-                  </div><!-- /.col -->
-                  <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box">
-                      <span class="info-box-icon bg-yellow"><i class="fa fa-calendar"></i></span>
-                      <div class="info-box-content">
-                        <span class="info-box-text">Schedules</span>
-                        <span class="info-box-number _schedule_number">--</span>
-                      </div><!-- /.info-box-content -->
-                    </div><!-- /.info-box -->
-                  </div><!-- /.col -->
-                  <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box">
-                      <span class="info-box-icon bg-red"><i class="fa fa-eye"></i></span>
-                      <div class="info-box-content">
-                        <span class="info-box-text">Total Views</span>
-                        <span class="info-box-number _view_number">---</span>
-                      </div><!-- /.info-box-content -->
-                    </div><!-- /.info-box -->
-                  </div><!-- /.col -->
-                </div><!-- /.row -->
-
-
-
+                
             <div class="row">
 
 
@@ -522,7 +194,7 @@
                   <!-- LINE CHART -->
                   <div class="box box-info">
                     <div class="box-header with-border">
-                      <h3 class="box-title">Media Info</h3>
+                      <h3 class="box-title">Total Views: <span class="_view_number"></span></h3>
                        
                     </div>
                     <div class="box-body">
@@ -539,24 +211,36 @@
                   <!-- AREA CHART -->
                   <div class="box box-primary">
                     <div class="box-header with-border">
+                     
+                    </div>
+                    <div class="box-body">
+                        
+                       
+                        <p class="text-center">
+                          <strong>Platforms</strong>
+                        </p>
+                       <div id="os_stats"></div>
+                     
+                       
+
+                    </div><!-- /.box-body -->
+                  </div><!-- /.box -->
+                </div><!-- /.col (LEFT) -->
+               
+
+              </div><!-- /.row -->
+
+
+                <div class="row">
+
+                    <div class="col-md-12">
+                  <!-- AREA CHART -->
+                  <div class="box box-primary">
+                    <div class="box-header with-border">
                       <h3 class="box-title">View's Chart</h3>
 
 
-                        <!--
-                         <select class="form-control pull-right" id="select-view" style="width: 200px;">
-                         <option selected="selected">View Daily</option>
-                          <option>View Monthly</option>
-                          <option>View Yearly</option>
-                        </select>
-                          <div class="form-group" style="width: 210px; float: right;">
-                          
-                            <div class="input-group">
-                              <div class="input-group-addon">
-                                <i class="fa fa-calendar"></i>
-                              </div>
-                              <input type="text" class="form-control pull-right" placeholder="Date Range" id="reportRange">
-                            </div><!-- /.input group -->
-                          <!--</div><!-- /.form group -->
+                       
                       
                       
                     </div>
@@ -568,9 +252,8 @@
                     </div><!-- /.box-body -->
                   </div><!-- /.box -->
                 </div><!-- /.col (LEFT) -->
-               
+                </div>
 
-              </div><!-- /.row -->
 
 
           </div><!--Media end-->
@@ -650,37 +333,6 @@
 <!--Modals section-->
 
 <!-- Modal -->
-<div class="modal fade" id="IsspModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">New Campaign</h4>
-      </div>
-      <form id="newCampaignForm">
-      <div class="modal-body">
-        <p>
-            <input type="text" class="form-control" placeholder="Campaign name" id="campaign-name" required>
-        </p>
-
-        <!--<p>
-            <input type="number" class="form-control" placeholder="Media Interval in seconds" id="campaign-interval" required>
-        </p>-->
-            
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <button type="submit" class="btn btn-primary newCampaignBtn">Add</button>
-      </div>
-      </form>
-
-
-    </div>
-  </div>
-</div>
-
-
-<!-- Modal -->
 <div class="modal fade" id="IsspModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -730,6 +382,7 @@
     <script src="plugins/fastclick/fastclick.min.js"></script>
     <script src="dist/js/md5.js"></script>
     <!-- AdminLTE App -->
+     <script src="dist/js/detect.js"></script>
     <script src="dist/js/socketio.js"></script>
     <script src="dist/js/app.min.js"></script>
     <script src="dist/js/ads.js"></script>

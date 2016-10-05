@@ -66,11 +66,13 @@ var isspElement = {
 				} else if(obj.type.match("video")) {
 					$('.media_preview').html('<video src="'+obj.file+'" controls style="width: 100%"/>');
 				}
-				Report.GetCampaign(obj.media_id);
-				Report.GetScreen(obj.media_id);
-				Report.GetSchedule(obj.media_id);
-				Report.GetViews(obj.media_id);
-				Report.GetStats(obj.media_id, 'daily');
+				//Report.GetCampaign(obj.media_id);
+				//Report.GetScreen(obj.media_id);
+				//Report.GetSchedule(obj.media_id);
+				//Report.GetViews(obj.media_id);
+				//$("._view_number").html(obj.views);
+				Report.GetAdsStats(obj.media_id);
+				Report.GetPlatform(obj.media_id);
 				$(''+clickID+'').addClass('showviewpanel');
 				$(''+clickID+'').show('slide', {direction: 'left'}, 300);	
 				
