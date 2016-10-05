@@ -1,16 +1,16 @@
-var appId = '1075830449126209';
+var appId = '*******';
 var filecount = 0;
 var filecounter = 0;
-var roleArn = 'arn:aws:iam::441204750735:role/isspRole';
+var roleArn = '*******';
 
-var bucketName = 'isspbucket';
+var bucketName = '*******';
 
-AWS.config.region = 'ap-southeast-1';
+AWS.config.region = '*******';
 
 AWS.config.update({
-accessKeyId: "AKIAJF6QRMUOIOJ4IFFQ",
-secretAccessKey: "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",
-"region": "ap-southeast-1"  
+accessKeyId: "*******",
+secretAccessKey: "*******",
+"region": "*******"  
 });
  var bucket = new AWS.S3({
             params: {
