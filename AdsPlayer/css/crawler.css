@@ -1,0 +1,16 @@
+
+	@import 'https://fonts.googleapis.com/css?family=Raleway:400,400i,500,700,900,900i';
+
+html, body {
+	margin: 0;
+	padding: 0;
+	background: none transparent;
+}
+marquee {
+	padding: 150px 5px;
+	font-weight: normal;
+	color: #fff;
+	font-size: 3em;
+	text-shadow: 1px 1px 1px #222;
+	background: url('blue2.png') repeat;
+}

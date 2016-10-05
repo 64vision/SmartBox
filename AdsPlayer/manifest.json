@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "ISSP Player Dev 2",
+  "description": "ISSP Player in chrome",
+  "version": "0.01",
+  "app": {
+    "background": {
+      "scripts": ["background.js"]
+    }
+  },
+  "kiosk_enabled": true,
+   "permissions": [
+    "app.window",
+	"<all_urls>",
+	"fileSystem",
+	"fullscreen",
+	"geolocation",
+	"power",
+	"storage",
+	"unlimitedStorage",
+	"webview",
+	"system.display",
+	"serial",
+	{ "socket" : ["tcp-listen"] }
+  ]
+}

@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+		background: #3398DA;
+		margin: 0;
+		padding: 0;
+		height: 100%;
+		overflow: hidden;
+	}
+#isspContent {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+.zone {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	text-align:  center;
+}
+.zone video, .zone img {
+	transition:All 1s ease;
+	-webkit-transition:All 1s ease;
+	-moz-transition:All 1s ease;
+	-o-transition:All 1s ease;
+	margin: auto;
+}
+.zone .asset {
+	position: relative;
+}
+#opener {
+	/*display: none;*/
+	
+}
+#maincrawler {
+	position: absolute;
+	width: 100%;
+	text-shadow: 1px 1px 1px #222;
+	background: url('/css/blue3.png') repeat;
+	padding: 20px 0px 5px 0px;
+	font-weight: normal;
+	color: #fff;
+	font-size: 3em;
+	text-shadow: 1px 1px 1px #222;
+	background: url('blue2.png') repeat;
+	z-index: 999;
+	bottom: 0;
+	display: none;
+}
+.messageAlert {
+	display: none;
+}
+.modal-content {
+	    border-radius:0;
+}
+#isspWidgets {
+	width: 100%;
+	top: 0;
+	position:  absolute;
+	z-index: 999;
+	bottom: 0;
+}
+.fullscreen-widget {
+	position:  absolute;
+	width: 100%;
+	bottom: 0;
+	top: 0;
+	height: 100%;
+}
+.bottom-crawler {
+	position:  absolute;
+	width: 100%;
+	bottom: 0;
+	height: 110px;
+}
+.bottom-crawler iframe, .fullscreen-widget iframe, #_inframe {
+	width:  100%;
+	height: 100%;
+	border: 0;
+	background: none;
+}

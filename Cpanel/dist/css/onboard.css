@@ -1,0 +1,35 @@
+#sitelist a {
+	cursor:  pointer;
+}
+.sub_cat {
+	margin-left:  20px;
+}
+.cat {
+	min-height: 200px;
+	margin-bottom: 20px;
+}
+.cat label {
+	display: block;
+	font-weight: normal;
+}
+.progress {
+	text-align: center;
+	width: 100%;
+	min-height: 20px;
+}
+.progress span.label {
+	display: block;
+	float: left;
+}
+.paginate_button {
+	padding: 2px 8px;
+	margin: 1px;
+	border: 1px solid #ddd;
+	cursor: pointer;
+}
+
+.paginate_button.current, .paginate_button:hover  {
+	background: #333;
+	color: #fff;
+}
+.updateBtn, .removeBtn { display: none; }

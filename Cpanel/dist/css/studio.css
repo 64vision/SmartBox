@@ -1,0 +1,134 @@
+.issp .box {
+	border-radius: 0;
+}
+.issp-sidebar-template {
+	min-height:  70px;
+}
+.issp-sidebar-template .box {
+	border-radius: 0;
+	background: #222D32;
+	color: #BDC0C4;
+}
+.issp-sidebar-template .box .box-header {
+	color: #4B646F;
+	background:  #1A2226;
+}
+.issp-sidebar-template .fa {
+	cursor: pointer;
+}
+
+#templatelist span {
+	display: block;
+	padding: 3px 0 ;
+	cursor: pointer;
+}
+#templatelist span:hover {
+	color: #ddd;
+
+}
+#fileLister .label {
+	cursor: pointer;
+}
+
+.campaignbox .box-widget .box-title {	
+	font-size: 1.3em;
+	cursor: move;
+}
+.campaignbox .box-widget {
+	font-size: .9em;
+}
+.timeframe {
+	overflow: hidden;
+
+}
+.timeframe table th, .timeframe table td {
+	padding:0 3px !important;
+}
+.timeframe table {	
+	width:  99%;
+	min-height: 130px;
+}
+.timeframe th {
+	font-weight: normal;
+	color: #3C8DBC;
+}
+#templatepreview img {
+		max-height:  270px;
+}
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Required to make elements draggable in old WebKit */
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+}
+.over {
+	background:  #3C8DBC;
+}
+.issp .control-sidebar .tab-content {
+	padding: 0;
+}
+.screenlist label {
+	display: block;
+	cursor: pointer;
+	font-weight:  normal;
+}
+.screenlist input {
+		margin-right:  10px;
+}
+#medialist a, #widgetlist a {
+	width:  30%;
+	margin: 2px;
+	padding: 3px;
+	overflow:  hidden;
+	display: block;
+	cursor:  move;
+	float: left;
+	font-size: .9em;
+	background: #3C8DBC;
+	border-radius: 3px;
+}
+#widgetlist a {
+	width: 100%;
+}
+#medialist a:hover, #widgetlist a:hover {
+	background: #0C1D27;
+}
+.searchbox {
+	font-size: .8em;
+	padding: 3px;
+	width: 100%;
+	margin-bottom:  10px;
+	background: #171E21;
+	border: 0;
+}
+#campaignlist .mediadragable {
+	min-height: 100px;
+
+}
+#campaignlist .mediadragable span {
+	margin: 3px;
+	width: 30%;
+position: relative;
+}
+#campaignlist .mediadragable span img, #campaignlist .mediadragable span video {
+	max-width: 99%;
+}
+#campaignlist .mediadragable span .fa{
+	position: absolute;
+	z-index: 4; 
+	right: 0;
+	background:  #DC6A1E;
+	color: #fff;
+	border-radius: 3px;
+	padding: 3px;
+}
+.main-sidebar {
+	/*height: 100%;
+	overflow-y:  scroll;*/
+}
+._wid {
+	display: none;
+}
